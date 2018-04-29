@@ -197,11 +197,11 @@ def main():
         print('识别结果：', result_a)
         # print(b)
         if modelid == 4:
-            print(touch_boss(x, y), 'boss'+target)
+            print(touch_boss(x, y), 'boss'+targets[modelid])
             count += 1
             time.sleep(2)
         elif modelid in [7, 8, 9]:
-            print(touch_diren(x, y), 'diren'+target)
+            print(touch_diren(x, y), 'diren'+targets[modelid])
         elif modelid == 2:
             print(touch(x, y))
             # flag = 1
@@ -211,7 +211,7 @@ def main():
         #     print(swipe_screen(100, 100, 100, 450))
         #     flag = 0
         else:
-            print(touch(x, y), '其他'+target)
+            print(touch(x, y), '其他'+targets[modelid])
         wait = random.random() + 0  # 停0~9秒 指数越高平均间隔越短
         print("等待时间", wait)
         time.sleep(wait)
