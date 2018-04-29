@@ -31,7 +31,7 @@ class MyThread(threading.Thread):
 def match(img, model, value):  # 模板和查找目标
     try:
         if model in ["diren1.png", 'diren2.png', 'diren3.png']:
-            value = 0.65
+            value = 0.63
         elif model == 'boss.png':
             value = 0.58
         print('value:', value)
@@ -199,17 +199,17 @@ def main():
         if modelid == 4:
             print(touch_boss(x, y), 'boss'+targets[modelid])
             count += 1
-            time.sleep(2)
+            # time.sleep(2)
         elif modelid in [7, 8, 9]:
             print(touch_diren(x, y), 'diren'+targets[modelid])
         elif modelid == 2:
             print(touch(x, y))
             # flag = 1
-        # elif flag == 1 and target == 'qianwang.png':
-        #     print(touch(x, y))
-        #     time.sleep(0.8)
-        #     print(swipe_screen(100, 100, 100, 450))
-        #     flag = 0
+        elif modelid == 2:  # 进入8-4地图向下滑动
+            # print(touch(x, y))
+            time.sleep(1)
+            print(swipe_screen(100, 250, 100, 100))
+            # flag = 0
         else:
             print(touch(x, y), '其他'+targets[modelid])
         wait = random.random() + 0  # 停0~9秒 指数越高平均间隔越短
