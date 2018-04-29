@@ -33,7 +33,7 @@ def match(img, model, value):  # 模板和查找目标
         if model in ["diren1.png", 'diren2.png', 'diren3.png']:
             value = 0.65
         elif model == 'boss.png':
-            value = 0.5
+            value = 0.58
         print('value:', value)
         # 确定模型类型与ID
         # 也可以使用in来做判断
@@ -189,7 +189,7 @@ def main():
         #         print(2)
         #         result_a = [250, 250]
         if result_a[0] == 0:
-            result_a = [280, 280]
+            result_a = [380, 0]
         x = result_a[0]
         y = result_a[1]
         # touch(xbn  ,y)
@@ -197,12 +197,12 @@ def main():
         print('识别结果：', result_a)
         # print(b)
         if modelid == 4:
-            print(touch_boss(x, y), 'boss')
+            print(touch_boss(x, y), 'boss'+target)
             count += 1
             time.sleep(2)
-        elif target in [7, 8, 9]:
+        elif modelid in [7, 8, 9]:
             print(touch_diren(x, y), 'diren'+target)
-        elif target == 2:
+        elif modelid == 2:
             print(touch(x, y))
             # flag = 1
         # elif flag == 1 and target == 'qianwang.png':
@@ -211,7 +211,7 @@ def main():
         #     print(swipe_screen(100, 100, 100, 450))
         #     flag = 0
         else:
-            print(touch(x, y))
+            print(touch(x, y), '其他'+target)
         wait = random.random() + 0  # 停0~9秒 指数越高平均间隔越短
         print("等待时间", wait)
         time.sleep(wait)
