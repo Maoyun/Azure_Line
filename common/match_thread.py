@@ -197,11 +197,11 @@ def main():
         print('识别结果：', result_a)
         # print(b)
         if modelid == 4:
-            print(touch_boss(x, y))
+            print(touch_boss(x, y), 'boss')
             count += 1
             time.sleep(2)
         elif target in [7, 8, 9]:
-            print(touch_diren(x, y))
+            print(touch_diren(x, y), 'diren'+target)
         elif target == 2:
             print(touch(x, y))
             # flag = 1
